@@ -1,10 +1,17 @@
-import * as React from "react"
+import React from 'react'
 
-
-const IndexPage = () => {
+function index() {
+  const getData = ()=>{
+    fetch("/.netlify/functions/crud/todos-read-all").then(async(response)=>{
+      console.log(await response.json())
+    })
+  }
   return (
-    <div>Project 12B crud app</div>
-    )
+    <div>
+      project 12C
+      <button onClick={()=>getData()}>get data</button>
+    </div>
+  )
 }
 
-export default IndexPage
+export default index
