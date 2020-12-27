@@ -12,8 +12,8 @@ exports.handler = (event, context, callback) => {
     const todoItem = {
         data: data
     }
-    return client.query(q.Create(q.Ref('classes/todos'), todoItem)
-        .then((response) => {
+    return client.query(    q.Create(q.Ref('classes/todos'), todoItem)
+        .then((response) =>     {
             console.log("success", response)
             return callback(null, {
                 statusCode: 200,
